@@ -67,7 +67,8 @@ body {
     color: #505565;
   }
   &__input {
-    width: 512px;
+    max-width: 512px;
+    min-width: 512px;
     min-height: 144px;
     padding: 16px;
     border-radius: 5px;
