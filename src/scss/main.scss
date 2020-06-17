@@ -1,4 +1,5 @@
 @import '~normalize.css';
+@import '_variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 body {
@@ -15,16 +16,25 @@ body {
   justify-content: center;
   align-content: center;
   height: 100vh;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
 }
 
 .hero {
   font-weight: 600;
-  font-size: 44px;
+  font-size: $heading-normal;
   line-height: 64px;
   grid-column: 2 / span 6;
   align-self: center;
   margin: 0;
   color: #232735;
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / 2;
+    font-size: $heading-small;
+    justify-self: center;
+  }
 }
 
 .notes {
@@ -34,13 +44,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  &__wrapper {
-    align-self: flex-end;
-    margin-top: 8px;
-    width: 88px;
-    display: flex;
-    justify-content: space-between;
-  }
   &__button {
     padding: 0;
     border: none;
@@ -56,16 +59,6 @@ body {
       outline: none;
     }
   }
-  &__label {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 32px;
-    text-align: center;
-    width: 448px;
-    margin-bottom: 24px;
-    align-self: center;
-    color: #505565;
-  }
   &__input {
     max-width: 512px;
     min-width: 512px;
@@ -74,8 +67,53 @@ body {
     border-radius: 5px;
     &::placeholder {
       font-weight: normal;
-      font-size: 14px;
+      font-size: $placeholder-normal;
       line-height: 24px;
+    }
+  }
+  &__label {
+    font-weight: normal;
+    font-size: $text-normal;
+    line-height: 32px;
+    text-align: center;
+    width: 448px;
+    margin-bottom: 24px;
+    align-self: center;
+    color: #505565;
+  }
+  &__wrapper {
+    align-self: flex-end;
+    margin-top: 8px;
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / 2;
+    &__button {
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    &__input {
+      max-width: 90vw;
+      min-width: 90vw;
+      box-sizing: border-box;
+      align-self: center;
+      padding: 8px;
+      &::placeholder {
+        font-size: $placeholder-small;
+      }
+    }
+    &__label {
+      width: 80vw;
+      font-size: $text-small;
+      margin-bottom: 12px;
+    }
+    &__wrapper {
+      width: 17vw;
+      margin-right: 5vw;
     }
   }
 }
@@ -93,5 +131,16 @@ body {
   &__text {
     margin-right: 5px;
     color: #8b90a0;
+  }
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / 2;
+    justify-self: center;
+    margin-top: 32px;
+    &__wrapper {
+      justify-content: center;
+    }
+    &__text {
+      font-size: $text-small;
+    }
   }
 }

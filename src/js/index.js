@@ -17,9 +17,10 @@ entryInput.value = result;
 
 const setButton = document.querySelector('.notes__button--save--js');
 const getButton = document.querySelector('.notes__button--load--js');
+
 setButton.addEventListener('click', () => {
   localStorage.setItem('entry', entryInput.value);
 });
 getButton.addEventListener('click', () => {
-  entryInput.value = localStorage.getItem('entry');
+  entryInput.value = entry;
 });
