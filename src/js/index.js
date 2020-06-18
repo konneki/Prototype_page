@@ -22,5 +22,5 @@ setButton.addEventListener('click', () => {
   localStorage.setItem('entry', entryInput.value);
 });
 getButton.addEventListener('click', () => {
-  entryInput.value = entry;
+  entryInput.value = localStorage.getItem('entry');
 });
