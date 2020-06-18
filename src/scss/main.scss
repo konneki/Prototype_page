@@ -52,11 +52,19 @@ body {
     overflow: hidden;
     &--load {
       display: inline;
-      outline: none;
+      img {
+        cursor: default;
+        width: 25px;
+        height: 25px;
+      }
     }
     &--save {
       display: inline;
-      outline: none;
+      img {
+        cursor: default;
+        width: 25px;
+        height: 25px;
+      }
     }
   }
   &__input {
